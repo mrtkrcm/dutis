@@ -27,3 +27,16 @@ func Test_installDuti(t *testing.T) {
 		})
 	}
 }
+
+func Test_updatePathForHomebrew(t *testing.T) {
+	tests := []struct {
+		name string
+	}{
+		{"Test_updatePathForHomebrew"},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			updatePathForHomebrew()
+		})
+	}
+}
