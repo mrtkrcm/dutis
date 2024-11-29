@@ -3,6 +3,8 @@ package util
 import (
 	"fmt"
 	"os/exec"
+	"os"
+	"path/filepath"
 )
 
 func InstallDeps() {
@@ -16,6 +18,7 @@ func installHomebrew() {
 		fmt.Println("Homebrew not exists, installing ...")
 		cmd := exec.Command("/bin/bash", "-c", "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)")
 		_, _ = cmd.Output()
+		updatePathForHomebrew()
 	}
 
 	cmd := exec.Command("brew", "--help")
@@ -25,6 +28,18 @@ func installHomebrew() {
 		err.Error()
 	} else {
 		fmt.Println("Homebrew works fine")
+	}
+}
+
+func updatePathForHomebrew() {
+	homebrewPath := "/usr/local/bin/brew"
+	if _, err := os.Stat(homebrewPath); os.IsNotExist(err) {
+		homebrewPath = "/opt/homebrew/bin/brew"
+	}
+
+	if _, err := os.Stat(homebrewPath); err == nil {
+		brewDir := filepath.Dir(homebrewPath)
+		os.Setenv("PATH", brewDir+":"+os.Getenv("PATH"))
 	}
 }
 

@@ -21,14 +21,19 @@ jobs:
       with:
         go-version: '1.20'
 
+    - name: Install Homebrew
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential curl file git
+        bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >>~/.profile
+        eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
     - name: Build
       run: go build -v ./...
 
     - name: Test
       run: go test -v ./...
-
-    - name: Test Brew Install
-      run: go test -v ./util/brew_install_test.go
 
   release:
     runs-on: ubuntu-latest
