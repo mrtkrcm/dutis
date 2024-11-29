@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/c-bata/go-prompt"
-	"github.com/tsonglew/dutis/util"
+	"github.com/mrtkrcm/dutis/util"
 	"strings"
 )
 

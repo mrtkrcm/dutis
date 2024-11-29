@@ -7,14 +7,14 @@ A command-line tool to select default applications. It is a wrapper around [duti
 ### Using HomeBrew
 
 ```shell
-brew tap tsonglew/dutis https://github.com/tsonglew/dutis
+brew tap mrtkrcm/dutis https://github.com/mrtkrcm/dutis
 brew install dutis
 ```
 
 ### Using Go
 
 ```shell
-go install github.com/tsonglew/dutis@latest
+go install github.com/mrtkrcm/dutis@latest
 ```
 
 ## Usage
@@ -47,4 +47,4 @@ dutis
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/tsonglew/dutis.svg?variant=adaptive)](https://starchart.cc/tsonglew/dutis)
+[![Stargazers over time](https://starchart.cc/mrtkrcm/dutis.svg?variant=adaptive)](https://starchart.cc/mrtkrcm/dutis)

@@ -1,4 +1,4 @@
-module github.com/tsonglew/dutis
+module github.com/mrtkrcm/dutis
 
 go 1.20
 

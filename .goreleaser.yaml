@@ -48,21 +48,21 @@ changelog:
 brews:
   - # GitHub/GitLab repository to push the formula to
     tap:
-      owner: tsonglew
+      owner: mrtkrcm
       name: dutis
 
     name: dutis
     # Template for the url which is determined by the given Token (github or gitlab)
     # Default for github is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
-    url_template: "https://github.com/tsonglew/dutis/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    url_template: "https://github.com/mrtkrcm/dutis/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
 
-    homepage: https://github.com/tsonglew/dutis
+    homepage: https://github.com/mrtkrcm/dutis
 
     # Git author used to commit to the repository.
     # Defaults are shown.
     commit_author:
-      name: tsonglew
-      email: tsonglew@gmail.com
+      name: mrtkrcm
+      email: mrtkrcm@gmail.com
 
     folder: Formula
 
