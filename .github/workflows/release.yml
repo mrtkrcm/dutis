@@ -22,5 +22,3 @@ jobs:
           version: latest
       - name: Run GoReleaser
         run: goreleaser release --rm-dist
-        with:
-          args: release --rm-dist
