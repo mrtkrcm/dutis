@@ -46,12 +46,7 @@ changelog:
       - "^test:"
 
 brews:
-  - # GitHub/GitLab repository to push the formula to
-    tap:
-      owner: mrtkrcm
-      name: dutis
-
-    name: dutis
+  - name: dutis
     # Template for the url which is determined by the given Token (github or gitlab)
     # Default for github is "https://github.com/<repo_owner>/<repo_name>/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
     url_template: "https://github.com/mrtkrcm/dutis/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
@@ -63,8 +58,6 @@ brews:
     commit_author:
       name: mrtkrcm
       email: mrtkrcm@gmail.com
-
-    folder: Formula
 
     # Caveats for the user of your binary.
     # Default is empty.
