@@ -33,19 +33,20 @@ func installDuti() {
 	if !commandExists("duti") {
 		fmt.Println("Duti not exists, installing ...")
 		cmd := exec.Command("brew", "install", "duti")
-		_, err := cmd.Output()
+		output, err := cmd.CombinedOutput()
 		if err != nil {
-			fmt.Println(string(err.(*exec.ExitError).Stderr))
-			panic(err)
+			fmt.Println(string(output))
+			fmt.Println("Error installing duti:", err)
+			return
 		}
 	}
 
 	cmd := exec.Command("man", "duti")
-	_, err := cmd.Output()
-
+	output, err := cmd.CombinedOutput()
 	if err != nil {
-		fmt.Println(string(err.(*exec.ExitError).Stderr))
-		panic(err)
+		fmt.Println(string(output))
+		fmt.Println("Error checking duti installation:", err)
+		return
 	} else {
 		fmt.Println("Duti works fine")
 	}
