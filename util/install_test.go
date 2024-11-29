@@ -1,5 +1,6 @@
 package util
 
+import "testing"
 
 func Test_installHomebrew(t *testing.T) {
 	tests := []struct {
