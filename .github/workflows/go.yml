@@ -12,7 +12,7 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
     - uses: actions/checkout@v3
 
@@ -36,7 +36,7 @@ jobs:
       run: go test -v ./...
 
   release:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     steps:
     - uses: actions/checkout@v3
