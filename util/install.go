@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os/exec"
 	"os"
-	"path/filepath"
+	"strings"
 )
 
 func InstallDeps() {
@@ -32,14 +32,11 @@ func installHomebrew() {
 }
 
 func updatePathForHomebrew() {
-	homebrewPath := "/usr/local/bin/brew"
-	if _, err := os.Stat(homebrewPath); os.IsNotExist(err) {
-		homebrewPath = "/opt/homebrew/bin/brew"
-	}
-
-	if _, err := os.Stat(homebrewPath); err == nil {
-		brewDir := filepath.Dir(homebrewPath)
-		os.Setenv("PATH", brewDir+":"+os.Getenv("PATH"))
+	brewPath := "/home/linuxbrew/.linuxbrew/bin"
+	path := os.Getenv("PATH")
+	if !strings.Contains(path, brewPath) {
+		newPath := fmt.Sprintf("%s:%s", brewPath, path)
+		os.Setenv("PATH", newPath)
 	}
 }
 
