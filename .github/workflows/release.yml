@@ -9,7 +9,7 @@ permissions: read-all
 
 jobs:
   release:
-      runs-on: ubuntu-latest
+      runs-on: macos-latest
       steps:
       - uses: actions/checkout@v4
       - name: Set up Go
@@ -24,5 +24,3 @@ jobs:
           args: release --clean --snapshot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Run GoReleaser
-        run: goreleaser release --rm-dist
