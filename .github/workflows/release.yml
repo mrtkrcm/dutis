@@ -1,7 +1,9 @@
-name: SLSA Go releaser
+name: Release
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ "master" ]
   release:
     types: [created]
 
