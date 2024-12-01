@@ -73,3 +73,8 @@ brews:
     dependencies:
       - name: git
       - name: go
+
+release:
+  github:
+    owner: mrtkrcm
+    name: dutis
